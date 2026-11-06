@@ -39,6 +39,17 @@ function showPyqLoadError(message) {
     pyqElement('[data-pyq-feedback]').className = 'pyq-error'
 }
 
+function getPyqCorrectAnswer(question) {
+    var answer = question.answer || question.correct_answer;
+    if (typeof answer === 'string') {
+        var letter = answer.trim().toUpperCase();
+        if (/^[A-Z]$/.test(letter)) return letter.charCodeAt(0) - 65;
+        var optionIndex = question.options.indexOf(answer);
+        if (optionIndex !== -1) return optionIndex;
+    }
+    return Number(answer);
+}
+
 function loadPyqQuestions() {
     fetch('recursion_100_mcqs.json')
         .then(function(response) {
@@ -72,13 +83,16 @@ function submitPyqAnswer() {
         return
     }
     pyqAnswered = true;
-    var selectedAnswer = question.options[Number(selectedOption.value)],
-        isCorrect = selectedAnswer === question.correct_answer;
+    var selectedAnswer = Number(selectedOption.value),
+        correctAnswer = getPyqCorrectAnswer(question),
+        answerLabel = question.answer || question.correct_answer,
+        explanation = question.explanation || question.solution || 'No explanation is available for this question.',
+        isCorrect = selectedAnswer === correctAnswer;
     if (isCorrect) pyqScore++;
     feedback.textContent = isCorrect ? 'Correct!' : 'Not quite.';
     feedback.className = isCorrect ? 'pyq-correct' : 'pyq-incorrect';
-    solution.innerHTML = '<b>Solution</b><p>' + escapeHtml(question.solution) + '</p><small>Correct answer: ' +
-        escapeHtml(question.correct_answer) + '</small>';
+    solution.innerHTML = '<b>Solution</b><p>' + escapeHtml(explanation) + '</p><small>Correct answer: ' +
+        escapeHtml(String(answerLabel)) + '</small>';
     solution.hidden = false;
     pyqElement('[data-pyq-submit]').disabled = true;
     pyqElement('[data-pyq-score]').textContent = pyqScore
