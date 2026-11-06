@@ -1,0 +1,914 @@
+/* ==========================================================================
+   Recurrence Relations learning module
+   ========================================================================== */
+
+#recurrence {
+    width: 100%;
+}
+
+.recurrence-shell {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.recurrence-sidebar,
+.recurrence-lesson-card {
+    min-width: 0;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+}
+
+.recurrence-sidebar {
+    position: sticky;
+    top: 8px;
+    padding: 14px;
+}
+
+.recurrence-sidebar h2 {
+    margin-bottom: 12px;
+}
+
+.recurrence-topics {
+    display: grid;
+    min-width: 0;
+    gap: 6px;
+}
+
+.recurrence-topic {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+}
+
+.recurrence-topic span {
+    color: var(--mu);
+    font: 12px ui-monospace, Menlo, monospace;
+}
+
+.recurrence-topic.active span,
+.recurrence-topic.active b {
+    color: inherit;
+}
+
+.recurrence-main {
+    min-width: 0;
+}
+
+.recurrence-lesson-card {
+    padding: 22px;
+}
+
+.recurrence-kicker {
+    color: var(--pre);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.recurrence-lesson-card h1 {
+    margin: 4px 0 12px;
+    font-size: clamp(1.45rem, 3vw, 2.2rem);
+}
+
+.recurrence-lesson-card h3 {
+    margin: 16px 0 7px;
+    font-size: 1.05rem;
+}
+
+.lead {
+    font-size: 1.08rem;
+}
+
+.objective-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 0 18px;
+}
+
+.objective-row span {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: var(--wait);
+    color: var(--tx);
+    font-size: .78rem;
+}
+
+.recurrence-definition,
+.concept-callout,
+.worked-example,
+.exam-tip {
+    padding: 12px 14px;
+    border-left: 5px solid var(--pre);
+    border-radius: 8px;
+    background: var(--code);
+}
+
+.concept-callout,
+.worked-example {
+    margin-top: 14px;
+}
+
+.iteration-rule {
+    display: grid;
+    gap: 4px;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-left: 5px solid var(--pre);
+    border-radius: 8px;
+    background: var(--code);
+}
+
+.iteration-rule .math-display {
+    margin: 3px 0;
+}
+
+.iteration-example {
+    display: grid;
+    gap: 0;
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    background: var(--code);
+}
+
+.iteration-example-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--bd);
+}
+
+.iteration-example-heading span {
+    color: var(--mu);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.iteration-example-heading strong {
+    color: var(--pre);
+}
+
+.iteration-example > .math-display {
+    margin: 14px 0 5px;
+    color: var(--pre);
+}
+
+.iteration-step {
+    margin-top: 12px;
+    padding: 11px 14px;
+    border-left: 3px solid var(--bd);
+    background: var(--card);
+}
+
+.iteration-step b {
+    display: block;
+    color: var(--tx);
+}
+
+.iteration-step p {
+    margin: 4px 0 0;
+    color: var(--mu);
+    font-size: .9rem;
+}
+
+.iteration-step .math-display {
+    margin: 5px 0 0;
+}
+
+.iteration-conclusion {
+    margin-top: 14px;
+    padding: 11px 14px;
+    border-radius: 7px;
+    background: var(--act);
+    font-size: 1rem;
+}
+
+.iteration-conclusion strong {
+    color: var(--post);
+    font: 700 1.08rem Georgia, "Times New Roman", serif;
+}
+
+.fraction {
+    display: inline-flex;
+    min-width: 42px;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.fraction > span:first-child {
+    padding: 0 5px 2px;
+    border-bottom: 1px solid currentColor;
+}
+
+.fraction > span:last-child {
+    padding-top: 2px;
+}
+
+.exam-tip {
+    display: grid;
+    gap: 3px;
+    margin-top: 18px;
+    border-left-color: var(--in);
+    background: var(--act);
+}
+
+.recurrence-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.recurrence-columns > section,
+.algorithm-grid article {
+    padding: 12px;
+    border: 1px solid var(--bd);
+    border-radius: 9px;
+}
+
+.recurrence-lesson-card pre,
+.recurrence-lesson-card .equation {
+    margin: 8px 0;
+    padding: 10px 12px;
+    overflow-x: auto;
+    border-radius: 7px;
+    background: var(--code);
+    font: 14px/1.6 ui-monospace, Menlo, monospace;
+}
+
+.equation {
+    color: var(--pre);
+    font-weight: 700;
+}
+
+.mini-checker,
+.master-analyzer {
+    margin-top: 16px;
+    padding: 14px;
+    border: 1px solid var(--bd);
+    border-radius: 9px;
+}
+
+.mini-checker label,
+.analyzer-fields label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 4px 8px 4px 0;
+    font-weight: 700;
+}
+
+.mini-checker select,
+.analyzer-fields input,
+.analyzer-fields select,
+.cheat-search {
+    min-width: 96px;
+    padding: 7px 8px;
+    border: 1px solid var(--bd);
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--tx);
+    font: inherit;
+}
+
+.mini-checker [data-check-result] {
+    margin-left: 8px;
+    color: var(--post);
+    font-weight: 700;
+}
+
+.recurrence-tools,
+.expansion-controls,
+.tree-controls,
+.practice-actions,
+.practice-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.recurrence-tools {
+    justify-content: space-between;
+    padding: 10px 2px;
+}
+
+.expansion-panel,
+.tree-controls {
+    margin-top: 14px;
+}
+
+.expansion-controls [data-expansion-progress],
+.tree-controls [data-tree-status],
+.practice-header {
+    margin-left: auto;
+    color: var(--mu);
+    font-size: .85rem;
+}
+
+[data-expansion-output] {
+    min-height: 225px;
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 9px;
+    background: var(--code);
+    font: 14px/1.9 ui-monospace, Menlo, monospace;
+    white-space: pre-wrap;
+}
+
+[data-expansion-output] span {
+    display: block;
+}
+
+[data-expansion-output] .expansion-new {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--act);
+    color: var(--tx);
+    font-weight: 700;
+}
+
+.solution-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.solution-steps > div,
+.example-grid > div {
+    display: grid;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--code);
+}
+
+.solution-steps code,
+.example-grid code {
+    font-size: .82rem;
+}
+
+.solution-steps strong,
+.example-grid b {
+    color: var(--post);
+}
+
+.example-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.example-grid small,
+.algorithm-grid small {
+    color: var(--mu);
+}
+
+.recursion-tree {
+    min-height: 190px;
+    margin-top: 12px;
+    padding: 14px;
+    overflow-x: auto;
+    border: 1px solid var(--bd);
+    border-radius: 9px;
+    background: var(--code);
+}
+
+.tree-level {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: max-content;
+    margin: 8px auto;
+}
+
+.tree-level > b {
+    width: 28px;
+    color: var(--mu);
+}
+
+.tree-level > span {
+    display: flex;
+    gap: 8px;
+}
+
+.tree-level i {
+    min-width: 54px;
+    padding: 5px 7px;
+    border: 1px solid var(--pre);
+    border-radius: 6px;
+    color: var(--pre);
+    font: 13px ui-monospace, Menlo, monospace;
+    text-align: center;
+}
+
+.level-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 14px;
+    margin-top: 9px;
+    padding: 9px;
+    border-radius: 7px;
+    background: var(--wait);
+}
+
+.level-summary b {
+    color: var(--mu);
+}
+
+.tree-table,
+.cheat-table {
+    display: grid;
+    gap: 2px;
+    margin-top: 14px;
+}
+
+.tree-table > div {
+    display: grid;
+    grid-template-columns: 70px repeat(3, 1fr);
+    gap: 8px;
+    padding: 7px 9px;
+    background: var(--code);
+}
+
+.tree-table > div:first-child {
+    background: var(--wait);
+    font-weight: 700;
+}
+
+.master-formula,
+.master-meaning,
+.master-method,
+.master-worked-example {
+    margin-top: 16px;
+    padding: 18px;
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    background: var(--code);
+}
+
+.master-formula {
+    border-top: 5px solid var(--pre);
+    text-align: center;
+}
+
+.math-label,
+.case-result span,
+.worked-heading span {
+    display: block;
+    color: var(--mu);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.math-display {
+    display: block;
+    margin: 8px 0;
+    color: var(--tx);
+    font: 700 1.25rem/1.5 Georgia, "Times New Roman", serif;
+    letter-spacing: .02em;
+}
+
+.math-display.compact {
+    margin: 10px 0 14px;
+    font-size: 1.05rem;
+}
+
+.math-display.small {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+.math-inline {
+    display: inline-block;
+    padding: 0 4px;
+    color: var(--pre);
+    font: 600 1em Georgia, "Times New Roman", serif;
+}
+
+.math-note {
+    color: var(--mu);
+    font-size: .92rem;
+}
+
+.symbol-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.symbol-grid > div {
+    display: grid;
+    gap: 3px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--card);
+}
+
+.symbol-grid strong {
+    color: var(--pre);
+    font: 700 1.15rem Georgia, "Times New Roman", serif;
+}
+
+.symbol-grid span,
+.master-method li span,
+.case-heading small,
+.regularity {
+    color: var(--mu);
+    font-size: .86rem;
+}
+
+.master-method ol {
+    display: grid;
+    gap: 12px;
+    margin: 10px 0 0;
+    padding-left: 26px;
+}
+
+.master-method li {
+    padding-left: 4px;
+}
+
+.master-method li b {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.master-cases {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.master-case {
+    display: grid;
+    gap: 4px;
+    padding: 16px;
+    border: 1px solid var(--bd);
+    border-top: 5px solid var(--pre);
+    border-radius: 10px;
+    background: var(--code);
+}
+
+.master-case.case-two {
+    border-color: var(--in);
+}
+
+.master-case.case-three {
+    border-color: var(--post);
+}
+
+.case-heading {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.case-heading b {
+    display: block;
+}
+
+.case-number {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    flex: 0 0 30px;
+    border-radius: 50%;
+    background: var(--pre);
+    color: #fff;
+    font-weight: 800;
+}
+
+.case-two .case-number {
+    background: var(--in);
+}
+
+.case-three .case-number {
+    background: var(--post);
+}
+
+.case-result {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--bd);
+}
+
+.case-result strong {
+    display: block;
+    margin-top: 3px;
+    color: var(--post);
+    font: 700 1.08rem Georgia, "Times New Roman", serif;
+}
+
+.regularity {
+    margin-top: 8px;
+}
+
+.worked-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.worked-heading strong {
+    color: var(--pre);
+}
+
+.worked-step {
+    margin-top: 12px;
+    padding-left: 12px;
+    border-left: 3px solid var(--bd);
+}
+
+.worked-step > span {
+    display: block;
+    margin-top: 2px;
+}
+
+.worked-conclusion {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: var(--act);
+}
+
+.analyzer-heading h3 {
+    margin-top: 0;
+}
+
+.analyzer-heading p {
+    margin: 0;
+    color: var(--mu);
+    font-size: .9rem;
+}
+
+.analyzer-fields {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.analyzer-result {
+    min-height: 54px;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 7px;
+    background: var(--code);
+}
+
+.analyzer-result code {
+    font: 600 1rem Georgia, "Times New Roman", serif;
+}
+
+.analyzer-result strong {
+    color: var(--post);
+}
+
+.analyzer-result > b {
+    display: block;
+    margin-top: 7px;
+    color: var(--mu);
+    font-size: .78rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.analyzer-result > b:first-child {
+    margin-top: 0;
+}
+
+.analyzer-answer {
+    display: flex;
+    gap: 7px;
+    align-items: baseline;
+    margin-top: 4px;
+    font: 700 1.08rem Georgia, "Times New Roman", serif;
+}
+
+.algorithm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.algorithm-grid article {
+    display: grid;
+    gap: 5px;
+}
+
+.algorithm-grid article h3 {
+    margin: 0;
+}
+
+.algorithm-grid article strong {
+    color: var(--post);
+}
+
+.cheat-search {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.cheat-table > div {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 12px;
+    padding: 8px 10px;
+    background: var(--code);
+}
+
+.cheat-table strong {
+    color: var(--post);
+}
+
+.growth-chart {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    height: 190px;
+    margin-top: 10px;
+    padding: 12px;
+    border-bottom: 2px solid var(--bd);
+}
+
+.growth-chart div {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    background: var(--pre);
+    color: #fff;
+    font-size: .72rem;
+    text-align: center;
+}
+
+.trap-grid {
+    display: grid;
+    gap: 6px;
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid var(--in);
+    border-radius: 8px;
+}
+
+.trap-grid span {
+    padding: 6px 8px;
+    border-radius: 5px;
+    background: var(--code);
+}
+
+.exam-question {
+    margin-top: 14px;
+    padding: 16px;
+    border: 1px solid var(--bd);
+    border-radius: 9px;
+}
+
+.answer-options {
+    display: grid;
+    gap: 7px;
+}
+
+.answer-options label {
+    padding: 9px;
+    border-radius: 6px;
+    background: var(--code);
+    cursor: pointer;
+}
+
+.practice-explanation {
+    margin-top: 12px;
+    padding: 10px;
+    border-left: 4px solid var(--post);
+    background: var(--wait);
+}
+
+.feedback {
+    font-weight: 700;
+}
+
+.feedback.correct {
+    color: var(--post);
+}
+
+.feedback.incorrect {
+    color: #dc2626;
+}
+
+.muted {
+    color: var(--mu);
+}
+
+@media (max-width: 900px) {
+    .recurrence-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .recurrence-sidebar {
+        position: static;
+        overflow: hidden;
+    }
+
+    .recurrence-topics {
+        display: flex;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .recurrence-topic {
+        min-width: 160px;
+    }
+
+    .example-grid,
+    .solution-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .recurrence-lesson-card {
+        padding: 14px;
+    }
+
+    .recurrence-columns,
+    .master-cases,
+    .algorithm-grid,
+    .example-grid,
+    .solution-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .symbol-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .master-formula,
+    .master-meaning,
+    .master-method,
+    .master-worked-example {
+        padding: 14px;
+    }
+
+    .worked-heading {
+        display: block;
+    }
+
+    .worked-heading strong {
+        display: block;
+        margin-top: 4px;
+    }
+
+    .recurrence-tools {
+        align-items: stretch;
+    }
+
+    .recurrence-tools button {
+        flex: 1;
+    }
+
+    .tree-table > div {
+        grid-template-columns: 45px repeat(3, minmax(70px, 1fr));
+        font-size: .82rem;
+    }
+
+    .cheat-table > div {
+        grid-template-columns: 1fr;
+    }
+
+    .growth-chart {
+        gap: 3px;
+        padding: 6px;
+    }
+
+    .growth-chart div {
+        min-width: 34px;
+        font-size: .62rem;
+    }
+
+    .symbol-grid {
+        grid-template-columns: 1fr;
+    }
+}

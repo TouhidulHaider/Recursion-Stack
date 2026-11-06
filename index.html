@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Recursion Insight</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="recurrence.css">
+</head>
+
+<body>
+    <h1>Recursion Insight</h1>
+    <p class="sub">A visualization tool that demonstrates recursive execution flow, function-call lifecycles, stack
+        behaviour, and recursive problem-solving techniques through interactive examples.</p>
+    <div class='nav'><button id='tl' class='p'><span data-ic="book"></span>Lesson: how to solve any
+            trace</button><button id='tr'><span data-ic="sum"></span>Recurrence Relations</button><button
+            id='tp'><span data-ic="flask"></span>Practice problems (34)</button><button id='tc'><span
+            data-ic="code"></span>Trace your own C code</button></div>
+    <div id='recurrence' hidden>
+        <div class='recurrence-shell'>
+            <aside class='recurrence-sidebar'>
+                <h2>Learn recurrence relations</h2>
+                <div id='recurrenceTopics' class='recurrence-topics'></div>
+            </aside>
+            <main class='recurrence-main'>
+                <div id='recurrenceLesson'></div>
+                <div class='recurrence-tools'>
+                    <button id='recurrencePrevious'>← Previous</button>
+                    <span id='recurrenceProgress'></span>
+                    <button id='recurrenceNext' class='p'>Next →</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div id='lesson' class='les'>
+        <div class='card'>
+            <h2>The big idea</h2>
+            <p>Every call is a <b>frame</b> with its own copy of the arguments. A frame can act at three moments. Most
+                trace questions are really asking: <i>which statements sit at which moment?</i></p>
+            <div class='zones'>
+                <div class='z1'><b><span data-ic="down"></span>Going down</b><br>statements <u>before</u> the recursive
+                    call</div>
+                <div class='z2'><b><span data-ic="swap"></span>Between</b><br>statements after call A and before call B
+                </div>
+                <div class='z3'><b><span data-ic="up"></span>Coming up</b><br>statements <u>after</u> the last call, and
+                    the return</div>
+            </div>
+            <p>Going down, work happens in call order. Coming up, it happens in <b>reverse</b> order. That one fact
+                explains <code>3 2 1 1 2 3</code>, digit reversal, string reversal and binary conversion.</p>
+        </div>
+        <div class='lesson-visuals'>
+            <div class='card'>
+                <h2>What happens between two recursive calls?</h2>
+                <p>The <b>between</b> statement is not skipped and it does not run when the function first arrives.
+                    It waits until <code>call A</code> has completely returned, runs once for the current frame, then
+                    starts <code>call B</code>.</p>
+                <pre><span class='ln'><i>1</i>f(n - 1);          <span style='color:var(--pre)'>// call A</span></span><span
+                        class='ln on'><i>2</i>printf("In %d ", n); <span style='color:var(--in)'>// between</span></span><span
+                        class='ln'><i>3</i>f(n - 1);          <span style='color:var(--post)'>// call B</span></span></pre>
+                <div class='timeline' aria-label='Execution order for a between statement'>
+                    <div class='timeline-step down'><b>1. Enter f(n)</b><span>start call A</span></div>
+                    <div class='timeline-step down'><b>2. Call A</b><span>finish its whole subtree</span></div>
+                    <div class='timeline-step between'><b>3. Between</b><span>run once in f(n)</span></div>
+                    <div class='timeline-step down'><b>4. Call B</b><span>start the second subtree</span></div>
+                    <div class='timeline-step up'><b>5. Return</b><span>finish f(n)</span></div>
+                </div>
+                <p class='legend'><b>Key:</b> the middle print belongs to the parent frame, so it appears between
+                    the complete output of the left child and the complete output of the right child.</p>
+            </div>
+            <div class='card'>
+                <h2>Read a node by its three moments</h2>
+                <div class='flow'>
+                    <div class='flow-row'><b style='color:var(--pre)'>Before</b><span>enter frame → do work → call A</span>
+                    </div>
+                    <div class='flow-row between'><b style='color:var(--in)'>Between</b><span>call A returns → do
+                            middle work → call B</span></div>
+                    <div class='flow-row'><b style='color:var(--post)'>After</b><span>call B returns → do final work →
+                            return</span></div>
+                </div>
+                <p>For <code>f(2)</code>, an in-order print follows this shape:</p>
+                <div class='out' aria-label='In-order output example'><div class='In'>left subtree</div><div
+                        class='In new'>parent's between print</div><div class='In'>right subtree</div></div>
+                <p class='legend'>If there is only one recursive call, “between” is simply the work after that call.
+                    If there are no calls, there is no between point.</p>
+            </div>
+        </div>
+        <div class='card'>
+            <h2>The 5-step method (works for every problem)</h2>
+            <ol>
+                <li><b>Find the stop condition.</b> Read it exactly: <code>n==0</code>, <code>n&lt;=0</code> and
+                    <code>n&gt;100</code> behave differently. Ask what happens for 0, 1 and negative values.</li>
+                <li><b>Label every statement</b> as <i>before</i>, <i>between</i> or <i>after</i> the recursive calls.
+                    Mark which ones print and which return.</li>
+                <li><b>Pick your tool</b> (tree or stack) using the table below.</li>
+                <li><b>Trace in real time order.</b> Write output in the order it happens. Never reorder prints for
+                    convenience.</li>
+                <li><b>Sanity-check.</b> Count calls (tree nodes), compare with a formula, and check that each return
+                    value goes to the right place.</li>
+            </ol>
+        </div>
+        <div class='card'>
+            <h2>Tree or stack? Pick by the question</h2>
+            <div class='sc'>
+                <table>
+                    <tr>
+                        <th>If the question is about…</th>
+                        <th>Use</th>
+                        <th>Why</th>
+                    </tr>
+                    <tr>
+                        <td>Only prints, and each call depends only on its own arguments (Pre/In/Post, Hanoi, ruler
+                            patterns)</td>
+                        <td><b>Tree</b>, then walk it</td>
+                        <td>Output order is just the order you walk the tree.</td>
+                    </tr>
+                    <tr>
+                        <td>How many calls, or how many prints</td>
+                        <td><b>Tree</b></td>
+                        <td>Count the nodes, times prints per node.</td>
+                    </tr>
+                    <tr>
+                        <td>A return value built from the children (fib, nCr, factorial, gcd)</td>
+                        <td><b>Tree</b>, fill from the leaves up</td>
+                        <td>Each node just combines its children.</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum depth, stack overflow, memory</td>
+                        <td><b>Stack</b> (= tree height)</td>
+                        <td>Depth of the stack is the longest root-to-leaf path.</td>
+                    </tr>
+                    <tr>
+                        <td><code>static</code>, global variables, pointers or arrays changed inside</td>
+                        <td><b>Stack + a variable column</b></td>
+                        <td>The value depends on <i>when</i>, not on where the node sits in the tree.</td>
+                    </tr>
+                    <tr>
+                        <td>A call inside a call, like <code>f(f(n+5))</code></td>
+                        <td><b>Stack</b> (grow the tree as you go)</td>
+                        <td>The outer call cannot be drawn until the inner one has returned.</td>
+                    </tr>
+                    <tr>
+                        <td>Prints in <code>main</code> mixed with prints inside the function</td>
+                        <td><b>Stack</b></td>
+                        <td>main prints only after the call has fully finished.</td>
+                    </tr>
+                    <tr>
+                        <td>Mutual recursion with prints (a calls b calls a)</td>
+                        <td><b>Stack</b> is easiest</td>
+                        <td>Frames alternate; a tree is just a long chain.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class='card'>
+            <h2>Where the tree shines: walk it like a finger tracing the outline</h2>
+            <p>Draw the call tree, then walk around it starting at the left of the root. Each node has three touch
+                points: the <b style='color:var(--pre)'>left side</b> (Pre, on arrival), the <b
+                    style='color:var(--in)'>bottom</b> (In, between children) and the <b style='color:var(--post)'>right
+                    side</b> (Post, on leaving). Print each time your finger touches a dot.</p><svg
+                viewBox='0 0 420 190' width='100%' style='max-width:460px'>
+                <g class='tl'>
+                    <line x1='210' y1='28' x2='110' y2='88' />
+                    <line x1='210' y1='28' x2='310' y2='88' />
+                    <line x1='110' y1='88' x2='60' y2='152' />
+                    <line x1='110' y1='88' x2='160' y2='152' />
+                    <line x1='310' y1='88' x2='260' y2='152' />
+                    <line x1='310' y1='88' x2='360' y2='152' />
+                </g>
+                <g class='tn'>
+                    <circle cx='210' cy='28' r='16' />
+                    <circle cx='110' cy='88' r='16' />
+                    <circle cx='310' cy='88' r='16' />
+                    <circle cx='60' cy='152' r='16' />
+                    <circle cx='160' cy='152' r='16' />
+                    <circle cx='260' cy='152' r='16' />
+                    <circle cx='360' cy='152' r='16' />
+                </g><text x='210' y='33'>2</text><text x='110' y='93'>1</text><text x='310' y='93'>1</text><text x='60'
+                    y='157'>0</text><text x='160' y='157'>0</text><text x='260' y='157'>0</text><text x='360'
+                    y='157'>0</text>
+                <g style='fill:var(--pre)'>
+                    <circle cx='191' cy='28' r='4' />
+                    <circle cx='91' cy='88' r='4' />
+                    <circle cx='291' cy='88' r='4' />
+                </g>
+                <g style='fill:var(--in)'>
+                    <circle cx='210' cy='47' r='4' />
+                    <circle cx='110' cy='107' r='4' />
+                    <circle cx='310' cy='107' r='4' />
+                </g>
+                <g style='fill:var(--post)'>
+                    <circle cx='229' cy='28' r='4' />
+                    <circle cx='129' cy='88' r='4' />
+                    <circle cx='329' cy='88' r='4' />
+                </g>
+            </svg>
+            <p>Touching the dots in order gives
+                <code>Pre 2, Pre 1, In 1, Post 1, In 2, Pre 1, In 1, Post 1, Post 2</code>. Leaves (n = 0) return
+                without printing. The same trick gives pre-order (left dots only), in-order (bottom dots only) and
+                post-order (right dots only).</p>
+        </div>
+        <div class='card'>
+            <h2>Where the tree fails: you need the stack</h2>
+            <p>Consider this complete function with <code>f(3)</code>. The tree is a plain chain
+                <code>f(3) → f(2) → f(1) → f(0)</code>, and it tempts you to answer <code>1 2 3</code>. The stack
+                shows what really happens:</p>
+            <pre class='lesson-code'><span class='ln'><i>1</i>void f(int n) {</span><span class='ln'><i>2</i>    static int x = 0;</span><span
+                    class='ln'><i>3</i>    if (n &lt;= 0) return;</span><span class='ln'><i>4</i>    x++;</span><span
+                    class='ln'><i>5</i>    f(n - 1);</span><span class='ln on'><i>6</i>    printf("%d ", x);</span><span
+                    class='ln'><i>7</i>}</span></pre>
+            <div class='sc'>
+                <div class='stack-layout'>
+                    <div class='stack-visual' aria-label='Frames pushed and popped during f(3)'>
+                        <b>Stack grows down</b>
+                        <div class='stack-frame main-frame'>main()</div>
+                        <div class='stack-frame'>f(3) · x = 1</div>
+                        <div class='stack-frame'>f(2) · x = 2</div>
+                        <div class='stack-frame active-frame'>f(1) · x = 3</div>
+                        <div class='stack-frame base-frame'>f(0) · returns</div>
+                        <div class='stack-arrow'>↑ pop frames, print <code>3 3 3</code></div>
+                    </div>
+                    <table>
+                    <tr>
+                        <th>Step</th>
+                        <th>Stack (bottom → top)</th>
+                        <th>x</th>
+                        <th>Printed</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>main, f(3)</td>
+                        <td>1</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>main, f(3), f(2)</td>
+                        <td>2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>main, f(3), f(2), f(1)</td>
+                        <td>3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>… f(1), f(0) returns at once</td>
+                        <td>3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>f(1) resumes after its call</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>f(2) resumes</td>
+                        <td>3</td>
+                        <td>3 3</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>f(3) resumes</td>
+                        <td>3</td>
+                        <td>3 3 3</td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+            <h3 class='lesson-subheading'>Stack-trace recipe</h3>
+            <ol>
+                <li>Make three columns: <b>stack</b>, <b>variables</b> (locals, globals, statics) and <b>output</b>.
+                </li>
+                <li>On a call, push a frame with its arguments and note the line where it will resume.</li>
+                <li>On a return, pop the frame and put the return value into the expression where the caller resumes.
+                </li>
+                <li>Change a global or static variable in the row where it changes, and carry it down to every later
+                    row.</li>
+            </ol>
+        </div>
+        <div class='card'>
+            <h2>Shortcuts and traps</h2>
+            <section class='formula-reference'>
+                <div class='formula-reference-heading'>
+                    <div>
+                        <h3 class='lesson-subheading formula-heading'>The most important recursion formulas</h3>
+                        <p>Use the recursive structure to estimate the number of calls or the upper-bound growth before tracing individual values.</p>
+                    </div>
+                    <span class='formula-badge'>Big-O reference</span>
+                </div>
+                <div class='formula-table'>
+                    <div class='formula-table-row formula-table-header'><b>Recursion structure</b><b>Total calls / complexity</b></div>
+                    <div class='formula-table-row'><code>f(n − 1)</code><span><strong>n + 1</strong> calls · <strong>O(n)</strong></span></div>
+                    <div class='formula-table-row'><code>f(n − 2)</code><span>Approximately <strong>n / 2</strong> calls</span></div>
+                    <div class='formula-table-row'><code>f(n / 2)</code><span><strong>O(log n)</strong> calls</span></div>
+                    <div class='formula-table-row'><code>f(n / 3)</code><span><strong>O(log n)</strong> calls</span></div>
+                    <div class='formula-table-row'><code>f(n − 1), f(n − 1)</code><span><strong>O(2<sup>n</sup>)</strong></span></div>
+                    <div class='formula-table-row'><code>f(n − 1), f(n − 2)</code><span><strong>O(2<sup>n</sup>)</strong></span></div>
+                    <div class='formula-table-row'><code>f(n / 2), f(n / 2)</code><span><strong>O(n)</strong></span></div>
+                    <div class='formula-table-row'><code>f(n / 2), f(n / 4)</code><span><strong>O(n)</strong></span></div>
+                    <div class='formula-table-row'><code>f(n − 1)</code> repeated <strong>n</strong> times<span><strong>O(n!)</strong> or another growth rate, depending on the recurrence</span></div>
+                    <div class='formula-table-row'><code>f(n − 1)</code> with constant work<span><strong>O(n)</strong></span></div>
+                    <div class='formula-table-row'><code>f(n / 2)</code> with constant work<span><strong>O(log n)</strong></span></div>
+                </div>
+                <div class='formula-examples'>
+                    <article>
+                        <span class='formula-label'>Example 1</span>
+                        <div class='math-display'>T(n) = 2T(n / 2) + O(1)</div>
+                        <span class='formula-arrow'>↓</span>
+                        <div class='math-result'>O(n)</div>
+                        <p>Two half-size calls create a linear number of leaves.</p>
+                    </article>
+                    <article>
+                        <span class='formula-label'>Example 2</span>
+                        <div class='math-display'>T(n) = 2T(n − 1) + O(1)</div>
+                        <span class='formula-arrow'>↓</span>
+                        <div class='math-result'>O(2<sup>n</sup>)</div>
+                        <p>Two calls keep branching while the input decreases by one.</p>
+                    </article>
+                </div>
+            </section>
+            <div class='reference-grid'>
+                <section class='reference-column formula-column'>
+                    <h3 class='lesson-subheading formula-heading'>Quick formulas</h3>
+                    <div class='reference-list'>
+                        <div class='reference-item'><b>Linear recursion</b><span class='formula-display'>calls = n + 1<br>depth = n<br><strong>O(n)</strong></span></div>
+                        <div class='reference-item'><b>Two calls on n − 1</b><span class='formula-display'>calls = 2<sup>n + 1</sup> − 1<br><strong>O(2<sup>n</sup>)</strong></span></div>
+                        <div class='reference-item'><b>Fibonacci</b><span class='formula-display'>calls(fib(n)) = 2 · fib(n + 1) − 1<br><strong>O(2<sup>n</sup>)</strong></span><small>Example: <code>fib(5) = 15</code> calls</small></div>
+                        <div class='reference-item'><b>Tower of Hanoi</b><span class='formula-display'>moves = 2<sup>n</sup> − 1<br>calls = 2<sup>n + 1</sup> − 1</span></div>
+                        <div class='reference-item'><b>Halving recursion</b><span class='formula-display'>calls = ⌊log<sub>2</sub> n⌋ + 2<br><strong>O(log n)</strong></span></div>
+                        <div class='reference-item'><b>Maximum stack depth</b><span class='formula-display'>depth = tree height + 1</span><small>The extra frame is usually <code>main()</code>.</small></div>
+                    </div>
+                </section>
+                <section class='reference-column trap-column'>
+                    <h3 class='lesson-subheading trap-heading'>Common traps</h3>
+                    <div class='reference-list'>
+                        <div class='reference-item trap'><b>Stop condition skips past zero</b><span><code>n == 0</code> with <code>n - 2</code> may never reach zero.</span></div>
+                        <div class='reference-item trap'><b>Integer division</b><code>5 / 2 == 2</code> in C when both operands are integers.</div>
+                        <div class='reference-item trap'><b>Post-decrement vs pre-decrement</b><span><code>f(n--)</code> passes old <code>n</code>; <code>f(--n)</code> passes new <code>n</code>.</span></div>
+                        <div class='reference-item trap'><b>Print outside the base-case guard</b><span>A statement after <code>if</code> also runs for base-case calls.</span></div>
+                        <div class='reference-item trap'><b>Ignored return value</b><span><code>f(n);</code> still performs side effects even when its result is discarded.</span></div>
+                        <div class='reference-item trap'><b>Argument evaluation order</b><span>C does not define whether <code>f(1)</code> or <code>f(2)</code> runs first inside <code>printf("%d %d", f(1), f(2))</code>.</span></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class='card'>
+            <h2>Now practise in this order</h2>
+            <p>Each button opens the problem with its full trace. Predict first, then step through.</p>
+            <div class='tries'><button data-try='0'>1 · Pre/In/Post order</button><button data-try='1'>2 · Before and after recursion</button><button data-try='14'>3 · Return values</button><button data-try='3'>4 · Count recursive calls</button><button data-try='10'>5 · Static variable</button><button data-try='11'>6 · Global variable</button><button data-try='12'>7 · Pre/post-increment</button><button data-try='13'>8 · Array and pointer recursion</button><button data-try='17'>9 · Recursion inside a loop</button><button data-try='30'>10 · Nested call: McCarthy 91</button></div>
+        </div>
+    </div>
+    <div class="wrap" id="practice" hidden>
+        <div class="side" id="side"></div>
+        <div>
+            <div class='card' id='ed' hidden style='margin-bottom:10px'>
+                <h2>Write or paste a C program with main()</h2><textarea id='src' spellcheck='false'
+                    style='width:100%;height:230px;font:13px/1.5 ui-monospace,Menlo,monospace;background:var(--code);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:8px'></textarea>
+                <div class='bar' style='margin:8px 0 0'><button id='run' class='p'><span data-ic="play"></span>Trace
+                        this code</button><select id='exs'
+                        style='font:inherit;padding:7px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx)'></select><span
+                        style='color:var(--mu);font-size:.8rem'>Supports int/char, if/for/while, arrays, char*,
+                        printf/putchar, static, globals, recursion.</span></div>
+                <div id='err' hidden style='color:#dc2626;margin-top:6px;white-space:pre-wrap'></div>
+            </div>
+            <div class="top">
+                <h3 id="ttl"></h3><span class="tag" id="pat"></span>
+            </div>
+            <div class="q" id="q"></div>
+            <div class="bar"><button id="reset"><span data-ic="skip"></span>Reset</button><button id="prev"><span
+                        data-ic="left"></span>Back</button><button id="next" class="p">Next<span data-ic="right"
+                        data-r="1"></span></button><button id="play"><span
+                        data-ic="play"></span>Auto-play</button><button id="rev"><span data-ic="eye"></span>Show
+                    answer</button><span id="cnt"></span></div>
+            <div class="msg" id="msg"></div>
+            <div class="grid">
+                <div class="card">
+                    <h2>Code (current line)</h2>
+                    <pre id="code"></pre>
+                </div>
+                <div class="card">
+                    <h2>Call stack (top = running)</h2>
+                    <div class="stack" id="stack"></div>
+                    <h2 style="margin-top:12px">Output so far</h2>
+                    <div class="out" id="out"></div>
+                    <div id="w"></div>
+                </div>
+                <div class="card">
+                    <h2>Call tree</h2>
+                    <div class="tree" id="tree"></div>
+                    <div class="legend">faint = not called yet · blue = waiting · yellow = running · grey = finished (→
+                        return value)</div>
+                </div>
+            </div>
+            <div class="ans" id="ans" hidden></div>
+        </div>
+    </div>
+    <script src="lessons.js"></script>
+    <script src="app.js"></script>
+    <script src="recurrence-lessons.js"></script>
+    <script src="recurrence-practice.js"></script>
+    <script src="recurrence.js"></script>
+</body>
+
+</html>
