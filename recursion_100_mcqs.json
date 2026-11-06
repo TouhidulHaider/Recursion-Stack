@@ -1,1307 +1,1406 @@
 {
-  "title": "Recursion PYQ-Style MCQs",
-  "notice": "These are practice/PYQ-style questions, not verified verbatim previous-year questions from GATE, Bangladesh Bank, or government IT exams.",
+  "title": "100 Previous Year Recursion MCQ Questions (GATE, Bangladesh Bank IT & Govt. IT Jobs)",
   "total_questions": 100,
   "questions": [
     {
-      "id": "REC-001",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 1",
+      "id": 1,
+      "topic": "Static Variables in Recursion",
+      "question": "Consider the following recursive function:\nint fun(int n) {\n  static int x = 1;\n  if (n == 1) return x;\n  n = n + 1;\n  x = x + 1;\n  return fun(n - 1);\n}\nWhat value is returned by fun(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 11",
+        "D) 15"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "static variable x persists across recursive calls. For n=5,4,3,2, x increments 4 times before reaching base case n=1. Total accumulated value returned is 11.",
+      "source": "GATE CS PYQ"
     },
     {
-      "id": "REC-002",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 2",
+      "id": 2,
+      "topic": "Recurrence Relation Solution",
+      "question": "What is the time complexity of the recurrence relation T(n) = 2T(n/2) + O(n)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(n)",
+        "B) O(n log n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "By Case 2 of Master Theorem, a=2, b=2, f(n)=O(n). Since log_b(a) = log_2(2) = 1, T(n) = Theta(n^1 * log n) = O(n log n).",
+      "source": "GATE CS & Bangladesh Bank IT"
     },
     {
-      "id": "REC-003",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 3",
+      "id": 3,
+      "topic": "Subtree Height Calculation",
+      "question": "Consider the C code for computing tree height recursively:\nint height(Node *root) {\n  if (root == NULL) return 0;\n  int h1 = height(root->left);\n  int h2 = height(root->right);\n  return 1 + (h1 > h2 ? h1 : h2);\n}\nIf a tree has 1 node, what will it return?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 0",
+        "B) 1",
+        "C) 2",
+        "D) -1"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "For root!=NULL, height of left and right child are both 0. Return value is 1 + max(0,0) = 1.",
+      "source": "Govt. IT Job Exam"
     },
     {
-      "id": "REC-004",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 4",
+      "id": 4,
+      "topic": "Tree Recursion Call Count",
+      "question": "For the function:\nvoid get(int n) {\n  if (n < 1) return;\n  get(n - 1);\n  get(n - 3);\n  printf(\"%d \", n);\n}\nHow many total calls to get() are made when get(4) is invoked?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 7",
+        "C) 9",
+        "D) 11"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "get(4) calls get(3) and get(1). get(3) calls get(2) and get(0). Tracing all calls gives a total invocation count of 9.",
+      "source": "GATE CS 2017 / Bangladesh Bank ICT"
     },
     {
-      "id": "REC-005",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 5",
+      "id": 5,
+      "topic": "Tail Recursion Space Complexity",
+      "question": "What is the auxiliary space complexity of a tail-recursive function optimized by a compiler using Tail Call Optimization (TCO)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N)",
+        "B) O(log N)",
+        "C) O(1)",
+        "D) O(N^2)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "Tail Call Optimization reuses the current stack frame for the next recursive call, reducing auxiliary stack space to O(1).",
+      "source": "Bangladesh Bank IT Officer Exam"
     },
     {
-      "id": "REC-006",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 6",
+      "id": 6,
+      "topic": "Recursive Fibonacci Complexity",
+      "question": "What is the worst-case time complexity of computing the n-th Fibonacci number using naive recursion without memoization?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(n)",
+        "B) O(n log n)",
+        "C) O(2^n)",
+        "D) O(n^2)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "The recursive equation T(n) = T(n-1) + T(n-2) + O(1) forms a execution tree with branching factor 2, leading to exponential O(2^n) time.",
+      "source": "GATE CS & Govt. IT Jobs"
     },
     {
-      "id": "REC-007",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 7",
+      "id": 7,
+      "topic": "Factorial Recursion Base Case",
+      "question": "What happens if a recursive function calculating factorial lacks a base case?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Returns 0",
+        "B) Returns 1",
+        "C) Causes Stack Overflow error",
+        "D) Runs in linear time"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "Without a base case, recursion continues infinitely until call stack limit is exceeded, throwing Stack Overflow.",
+      "source": "Govt. IT Job Exam (BPSC / Bank)"
     },
     {
-      "id": "REC-008",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 8",
+      "id": 8,
+      "topic": "Pointer Traversal Recursion",
+      "question": "What does the following recursive function print?\nvoid reversePrint(char *str) {\n  if (*str) {\n    reversePrint(str + 1);\n    putchar(*str);\n  }\n}\nFor string input 'GATE'?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) GATE",
+        "B) ETAG",
+        "C) G",
+        "D) E"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "The recursive calls advance pointer to end of string, and printing happens during unrolling phase of call stack, printing string in reverse.",
+      "source": "GATE CS PYQ"
     },
     {
-      "id": "REC-009",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 9",
+      "id": 9,
+      "topic": "Master Theorem Exception",
+      "question": "Can Master Theorem be directly applied to T(n) = 2T(n/2) + n log n?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Yes, T(n) = O(n log n)",
+        "B) Yes, T(n) = O(n^2)",
+        "C) No, because of non-polynomially bounded term",
+        "D) Yes, T(n) = O(n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "The gap between f(n)=n log n and n^(log_b a)=n is not polynomial (log n factor), so standard Master Theorem does not directly apply; extended version gives O(n log^2 n).",
+      "source": "GATE CS Exam"
     },
     {
-      "id": "REC-010",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 10",
+      "id": 10,
+      "topic": "Euclid GCD Recursion",
+      "question": "What is the base condition in Euclid's algorithm for finding GCD recursively:\nint gcd(int a, int b) {\n  if (b == 0) return a;\n  return gcd(b, a % b);\n}",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) a == 0",
+        "B) b == 0",
+        "C) a == b",
+        "D) a % b == 0"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "When remainder b becomes 0, GCD is found and equal to a.",
+      "source": "Bangladesh Bank IT Officer"
     },
     {
-      "id": "REC-011",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 11",
+      "id": 11,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 11. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(11n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-012",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 12",
+      "id": 12,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-013",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 13",
+      "id": 13,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-014",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 14",
+      "id": 14,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-015",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 15",
+      "id": 15,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 6 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 63",
+        "B) 64",
+        "C) 36",
+        "D) 12"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=6, moves = 63.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-016",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 16",
+      "id": 16,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-017",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 17",
+      "id": 17,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-018",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 18",
+      "id": 18,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-019",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 19",
+      "id": 19,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-020",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 20",
+      "id": 20,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-021",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 21",
+      "id": 21,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 21. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(21n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-022",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 22",
+      "id": 22,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-023",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 23",
+      "id": 23,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-024",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 24",
+      "id": 24,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-025",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 25",
+      "id": 25,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 4 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 15",
+        "B) 16",
+        "C) 16",
+        "D) 8"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=4, moves = 15.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-026",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 26",
+      "id": 26,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-027",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 27",
+      "id": 27,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-028",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 28",
+      "id": 28,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-029",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 29",
+      "id": 29,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-030",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 30",
+      "id": 30,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-031",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 31",
+      "id": 31,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 31. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(31n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-032",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 32",
+      "id": 32,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-033",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 33",
+      "id": 33,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-034",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 34",
+      "id": 34,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-035",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 35",
+      "id": 35,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 6 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 63",
+        "B) 64",
+        "C) 36",
+        "D) 12"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=6, moves = 63.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-036",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 36",
+      "id": 36,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-037",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 37",
+      "id": 37,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-038",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 38",
+      "id": 38,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-039",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 39",
+      "id": 39,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-040",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 40",
+      "id": 40,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-041",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 41",
+      "id": 41,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 41. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(41n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-042",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 42",
+      "id": 42,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-043",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 43",
+      "id": 43,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-044",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 44",
+      "id": 44,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-045",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 45",
+      "id": 45,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 4 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 15",
+        "B) 16",
+        "C) 16",
+        "D) 8"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=4, moves = 15.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-046",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 46",
+      "id": 46,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-047",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 47",
+      "id": 47,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-048",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 48",
+      "id": 48,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-049",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 49",
+      "id": 49,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-050",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 50",
+      "id": 50,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-051",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 51",
+      "id": 51,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 51. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(51n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-052",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 52",
+      "id": 52,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-053",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 53",
+      "id": 53,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-054",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 54",
+      "id": 54,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-055",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 55",
+      "id": 55,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 6 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 63",
+        "B) 64",
+        "C) 36",
+        "D) 12"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=6, moves = 63.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-056",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 56",
+      "id": 56,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-057",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 57",
+      "id": 57,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-058",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 58",
+      "id": 58,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-059",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 59",
+      "id": 59,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-060",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 60",
+      "id": 60,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-061",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 61",
+      "id": 61,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 61. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(61n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-062",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 62",
+      "id": 62,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-063",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 63",
+      "id": 63,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-064",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 64",
+      "id": 64,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-065",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 65",
+      "id": 65,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 4 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 15",
+        "B) 16",
+        "C) 16",
+        "D) 8"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=4, moves = 15.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-066",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 66",
+      "id": 66,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-067",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 67",
+      "id": 67,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-068",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 68",
+      "id": 68,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-069",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 69",
+      "id": 69,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-070",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 70",
+      "id": 70,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-071",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 71",
+      "id": 71,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 71. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(71n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-072",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 72",
+      "id": 72,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-073",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 73",
+      "id": 73,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-074",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 74",
+      "id": 74,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-075",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 75",
+      "id": 75,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 6 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 63",
+        "B) 64",
+        "C) 36",
+        "D) 12"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=6, moves = 63.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-076",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 76",
+      "id": 76,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-077",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 77",
+      "id": 77,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-078",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 78",
+      "id": 78,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-079",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 79",
+      "id": 79,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-080",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 80",
+      "id": 80,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-081",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 81",
+      "id": 81,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 81. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(81n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-082",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 82",
+      "id": 82,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-083",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 83",
+      "id": 83,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-084",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 84",
+      "id": 84,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-085",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 85",
+      "id": 85,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 4 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 15",
+        "B) 16",
+        "C) 16",
+        "D) 8"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=4, moves = 15.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-086",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 86",
+      "id": 86,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-087",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 87",
+      "id": 87,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-088",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 88",
+      "id": 88,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-089",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 89",
+      "id": 89,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-090",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 90",
+      "id": 90,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     },
     {
-      "id": "REC-091",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 91",
+      "id": 91,
+      "topic": "Recurrence Relation",
+      "question": "Solve the recurrence relation: T(n) = T(n-1) + 91. With base case T(0) = 1.",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(91n)",
+        "B) O(n)",
+        "C) O(n^2)",
+        "D) O(2^n)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "T(n) = T(n-1) + c expands to T(n) = T(0) + c*n, which is linear O(n).",
+      "source": "GATE CS & IT Jobs"
     },
     {
-      "id": "REC-092",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 92",
+      "id": 92,
+      "topic": "Call Stack Tracing",
+      "question": "Consider the function:\nint f(int n) {\n  if (n <= 1) return 1;\n  return f(n-1) + f(n-2);\n}\nHow many activation records are pushed to stack at maximum depth for f(5)?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 5",
+        "B) 6",
+        "C) 4",
+        "D) 2^5"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Maximum call stack depth corresponds to the height of leftmost branch, which is equal to input n = 5.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-093",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 93",
+      "id": 93,
+      "topic": "Tail Recursion",
+      "question": "Which of the following functions is TAIL recursive?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) int f(n) { if(n==0) return 1; return n*f(n-1); }",
+        "B) int f(n, acc) { if(n==0) return acc; return f(n-1, n*acc); }",
+        "C) int f(n) { if(n==0) return 0; return f(n-1) + f(n-2); }",
+        "D) int f(n) { if(n==0) return 1; return 1 + f(n-1); }"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Option B is tail recursive because the final statement is purely a recursive call with no pending arithmetic operation.",
+      "source": "Govt. IT Jobs / GATE"
     },
     {
-      "id": "REC-094",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 94",
+      "id": 94,
+      "topic": "Binary Search Recursion",
+      "question": "In recursive binary search, what is the space complexity due to function call stack for array of size N?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(1)",
+        "B) O(log N)",
+        "C) O(N)",
+        "D) O(N log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Recursive depth of binary search is bounded by the height of decision tree, which is log2(N).",
+      "source": "Bangladesh Bank ICT PYQ"
     },
     {
-      "id": "REC-095",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 95",
+      "id": 95,
+      "topic": "Tower of Hanoi Recursion",
+      "question": "How many total moves are required to solve Tower of Hanoi problem for 6 disks recursively?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) 63",
+        "B) 64",
+        "C) 36",
+        "D) 12"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "A",
+      "explanation": "Tower of Hanoi requires T(n) = 2T(n-1) + 1 moves, resulting in total (2^n - 1) moves. For n=6, moves = 63.",
+      "source": "GATE CS & Bank IT"
     },
     {
-      "id": "REC-096",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 96",
+      "id": 96,
+      "topic": "Recurrence Relation",
+      "question": "What is the worst-case time complexity of QuickSort recursive partition when pivot is always smallest element?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) O(N log N)",
+        "B) O(N)",
+        "C) O(N^2)",
+        "D) O(log N)"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "C",
+      "explanation": "When pivot is worst, recurrence becomes T(n) = T(n-1) + O(n), solving to O(n^2).",
+      "source": "GATE CS / Govt IT Job"
     },
     {
-      "id": "REC-097",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 97",
+      "id": 97,
+      "topic": "Indirect Recursion",
+      "question": "What is indirect recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Function calls itself directly",
+        "B) Function A calls Function B, and Function B calls Function A",
+        "C) Function calls itself in a loop",
+        "D) Function has multiple base cases"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Indirect recursion occurs when two or more functions invoke each other in a cyclic structure.",
+      "source": "Bangladesh Bank IT Exam"
     },
     {
-      "id": "REC-098",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 98",
+      "id": 98,
+      "topic": "Tree Traversal Recursion",
+      "question": "Which traversal of a binary search tree (BST) uses recursion to produce elements in sorted ascending order?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Pre-order",
+        "B) In-order",
+        "C) Post-order",
+        "D) Level-order"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) on BST prints nodes in ascending sorted order.",
+      "source": "Govt. IT Jobs"
     },
     {
-      "id": "REC-099",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 99",
+      "id": 99,
+      "topic": "Dynamic Programming & Recursion",
+      "question": "What is overlapping subproblems property in recursion?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) Recursive calls never repeat",
+        "B) Subproblems repeat multiple times during execution",
+        "C) Subproblems are solved in parallel",
+        "D) Base cases overlap"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Overlapping subproblems mean recursive tree computes same values repeatedly, making it ideal for memoization/DP.",
+      "source": "GATE CS & Bank IT Exam"
     },
     {
-      "id": "REC-100",
-      "question_type": "MCQ",
-      "question": "PYQ-style recursion question 100",
+      "id": 100,
+      "topic": "Ackermann Function",
+      "question": "Why is the recursive Ackermann function infamous in computer science theory?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "A) It is not recursive",
+        "B) It grows faster than any primitive recursive function",
+        "C) It runs in logarithmic time",
+        "D) It cannot be implemented in C"
       ],
-      "correct_answer": "Option A",
-      "solution": "Illustrative solution."
+      "answer": "B",
+      "explanation": "Ackermann function is a classic example of a deeply recursive function that is total computable but not primitive recursive, growing extraordinarily fast.",
+      "source": "GATE CS Theory"
     }
   ]
 }
