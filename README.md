@@ -9,6 +9,7 @@ An interactive learning platform for understanding recursion through visual exec
 - Multiple recursive calls, loops, globals, statics, pointers, arrays, and increments
 - Digit and binary conversion examples
 - A custom C-like recursion tracer
+- A Previous Year MCQ tab with 100 JSON-backed questions, scoring, explanations, and random-question practice
 - Recurrence Relations lessons covering iteration, recursion trees, the Master Theorem, common DSA recurrences, complexity references, and exam practice
 - Responsive layout for desktop and mobile screens
 
@@ -49,6 +50,9 @@ The site will be available at:
 | `recurrence.js` | Recurrence module runtime and interactive controls |
 | `recurrence-lessons.js` | Recurrence curriculum content |
 | `recurrence-practice.js` | Recurrence practice question bank |
+| `pyq.js` | Previous Year MCQ loading, navigation, scoring, and feedback |
+| `pyq.css` | Previous Year MCQ styles |
+| `recursion_100_mcqs.json` | Previous Year MCQ question bank |
 
 ## Technology
 

@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Previous Year MCQ practice
+   ========================================================================== */
+
+.pyq-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pyq-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: start;
+    margin-bottom: 14px;
+    padding: 22px;
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+    background: var(--card);
+}
+
+.pyq-kicker {
+    color: var(--pre);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.pyq-header h2 {
+    margin: 3px 0 5px;
+    color: var(--tx);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.pyq-header p {
+    margin: 0;
+    color: var(--mu);
+}
+
+.pyq-stat {
+    display: grid;
+    min-width: 92px;
+    padding: 10px;
+    border-radius: 9px;
+    background: var(--wait);
+    color: var(--pre);
+    text-align: center;
+}
+
+.pyq-stat b {
+    font-size: 1.5rem;
+}
+
+.pyq-stat span {
+    font-size: .75rem;
+}
+
+.pyq-notice {
+    margin-bottom: 14px;
+    padding: 10px 13px;
+    border-left: 4px solid var(--in);
+    border-radius: 7px;
+    background: var(--act);
+    color: var(--tx);
+    font-size: .85rem;
+}
+
+.pyq-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.pyq-toolbar [data-pyq-progress] {
+    margin: 0 auto;
+    color: var(--mu);
+    font-weight: 700;
+}
+
+.pyq-card {
+    padding: 22px;
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+    background: var(--card);
+}
+
+.pyq-question-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--mu);
+    font-size: .82rem;
+    font-weight: 700;
+}
+
+.pyq-question-meta [data-pyq-id] {
+    color: var(--pre);
+}
+
+.pyq-card h3 {
+    margin: 18px 0;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.pyq-options {
+    display: grid;
+    gap: 9px;
+}
+
+.pyq-options label {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    padding: 12px;
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+    background: var(--code);
+    cursor: pointer;
+}
+
+.pyq-options label:has(input:checked) {
+    border-color: var(--pre);
+    background: var(--wait);
+}
+
+.pyq-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.pyq-correct,
+.pyq-incorrect,
+.pyq-warning,
+.pyq-error {
+    font-weight: 700;
+}
+
+.pyq-correct {
+    color: var(--post);
+}
+
+.pyq-incorrect,
+.pyq-error {
+    color: #dc2626;
+}
+
+.pyq-warning {
+    color: var(--in);
+}
+
+.pyq-solution {
+    margin-top: 16px;
+    padding: 13px;
+    border-left: 4px solid var(--post);
+    border-radius: 7px;
+    background: var(--code);
+}
+
+.pyq-solution p {
+    margin: 4px 0 8px;
+}
+
+.pyq-solution small {
+    color: var(--mu);
+}
+
+@media (max-width: 640px) {
+    .pyq-header,
+    .pyq-card {
+        padding: 15px;
+    }
+
+    .pyq-header {
+        display: block;
+    }
+
+    .pyq-stat {
+        display: inline-grid;
+        margin-top: 12px;
+    }
+
+    .pyq-toolbar [data-pyq-progress] {
+        order: -1;
+        width: 100%;
+        margin: 0;
+    }
+}

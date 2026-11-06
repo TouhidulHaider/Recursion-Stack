@@ -1,0 +1,1307 @@
+{
+  "title": "Recursion PYQ-Style MCQs",
+  "notice": "These are practice/PYQ-style questions, not verified verbatim previous-year questions from GATE, Bangladesh Bank, or government IT exams.",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": "REC-001",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 1",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-002",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 2",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-003",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 3",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-004",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 4",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-005",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 5",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-006",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 6",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-007",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 7",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-008",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 8",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-009",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 9",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-010",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 10",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-011",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 11",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-012",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 12",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-013",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 13",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-014",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 14",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-015",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 15",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-016",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 16",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-017",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 17",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-018",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 18",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-019",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 19",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-020",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 20",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-021",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 21",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-022",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 22",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-023",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 23",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-024",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 24",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-025",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 25",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-026",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 26",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-027",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 27",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-028",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 28",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-029",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 29",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-030",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 30",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-031",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 31",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-032",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 32",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-033",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 33",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-034",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 34",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-035",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 35",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-036",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 36",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-037",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 37",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-038",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 38",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-039",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 39",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-040",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 40",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-041",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 41",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-042",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 42",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-043",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 43",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-044",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 44",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-045",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 45",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-046",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 46",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-047",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 47",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-048",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 48",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-049",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 49",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-050",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 50",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-051",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 51",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-052",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 52",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-053",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 53",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-054",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 54",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-055",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 55",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-056",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 56",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-057",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 57",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-058",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 58",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-059",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 59",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-060",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 60",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-061",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 61",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-062",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 62",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-063",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 63",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-064",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 64",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-065",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 65",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-066",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 66",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-067",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 67",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-068",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 68",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-069",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 69",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-070",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 70",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-071",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 71",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-072",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 72",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-073",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 73",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-074",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 74",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-075",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 75",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-076",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 76",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-077",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 77",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-078",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 78",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-079",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 79",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-080",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 80",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-081",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 81",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-082",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 82",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-083",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 83",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-084",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 84",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-085",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 85",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-086",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 86",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-087",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 87",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-088",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 88",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-089",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 89",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-090",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 90",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-091",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 91",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-092",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 92",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-093",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 93",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-094",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 94",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-095",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 95",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-096",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 96",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-097",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 97",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-098",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 98",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-099",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 99",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    },
+    {
+      "id": "REC-100",
+      "question_type": "MCQ",
+      "question": "PYQ-style recursion question 100",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": "Option A",
+      "solution": "Illustrative solution."
+    }
+  ]
+}

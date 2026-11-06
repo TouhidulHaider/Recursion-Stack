@@ -5,6 +5,7 @@
 var iconPathData = {
     book: '<path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/>',
     sum: '<text x="12" y="17" text-anchor="middle" font-size="18" font-family="Georgia, serif">∑</text>',
+    list: '<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/>',
     flask: '<path d="M10 2v7.3L4.5 19a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 9.3V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/>',
     code: '<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>',
     skip: '<path d="M19 20 9 12l10-8z"/><path d="M5 19V5"/>',
@@ -1229,9 +1230,11 @@ function switchTab(w) {
     getElement('lesson').hidden = w != 'l';
     getElement('practice').hidden = w != 'p';
     if (getElement('recurrence')) getElement('recurrence').hidden = w != 'r';
+    if (getElement('pyq')) getElement('pyq').hidden = w != 'q';
     getElement('tl').className = w == 'l' ? 'p' : '';
     getElement('tp').className = w == 'p' ? 'p' : '';
     if (getElement('tr')) getElement('tr').className = w == 'r' ? 'p' : '';
+    if (getElement('tq')) getElement('tq').className = w == 'q' ? 'p' : '';
     if (w == 'l') stopAutoPlay();
     window.scrollTo(0, 0)
 }

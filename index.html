@@ -7,6 +7,7 @@
     <title>Recursion Insight</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="recurrence.css">
+    <link rel="stylesheet" href="pyq.css">
 </head>
 
 <body>
@@ -15,8 +16,36 @@
         behaviour, and recursive problem-solving techniques through interactive examples.</p>
     <div class='nav'><button id='tl' class='p'><span data-ic="book"></span>Lesson: how to solve any
             trace</button><button id='tr'><span data-ic="sum"></span>Recurrence Relations</button><button
-            id='tp'><span data-ic="flask"></span>Practice problems (34)</button><button id='tc'><span
-            data-ic="code"></span>Trace your own C code</button></div>
+            id='tp'><span data-ic="flask"></span>Practice problems (34)</button><button id='tq'><span
+            data-ic="list"></span>Previous Year MCQs</button><button id='tc'><span data-ic="code"></span>Trace
+        your own C code</button></div>
+    <div id='pyq' class='pyq-page' hidden>
+        <div class='pyq-header'>
+            <div>
+                <span class='pyq-kicker'>Exam practice</span>
+                <h2>Previous Year MCQ Practice</h2>
+                <p>Work through recursion questions one at a time. Submit an answer to reveal the explanation.</p>
+            </div>
+            <div class='pyq-stat'><b data-pyq-total>100</b><span>questions</span></div>
+        </div>
+        <div class='pyq-notice' data-pyq-notice></div>
+        <div class='pyq-toolbar'>
+            <button data-pyq-previous>← Previous</button>
+            <span data-pyq-progress>Loading questions…</span>
+            <button data-pyq-next class='p'>Next →</button>
+            <button data-pyq-random>Random question</button>
+        </div>
+        <article class='pyq-card'>
+            <div class='pyq-question-meta'><span data-pyq-id></span><span>Score: <b data-pyq-score>0</b></span></div>
+            <h3 data-pyq-question>Loading questions…</h3>
+            <div class='pyq-options' data-pyq-options></div>
+            <div class='pyq-actions'>
+                <button data-pyq-submit class='p'>Submit answer</button>
+                <span data-pyq-feedback></span>
+            </div>
+            <div class='pyq-solution' data-pyq-solution hidden></div>
+        </article>
+    </div>
     <div id='recurrence' hidden>
         <div class='recurrence-shell'>
             <aside class='recurrence-sidebar'>
@@ -404,6 +433,7 @@
     <script src="recurrence-lessons.js"></script>
     <script src="recurrence-practice.js"></script>
     <script src="recurrence.js"></script>
+    <script src="pyq.js"></script>
 </body>
 
 </html>
